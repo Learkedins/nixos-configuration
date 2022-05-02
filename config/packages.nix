@@ -8,7 +8,7 @@
     environment.systemPackages = with pkgs; [
         # Rice/desktop
         bemenu zsh dunst wl-clipboard swaybg sway brillo wlsunset 
-      	home-manager nitrogen lxappearance scrot xclip
+      	home-manager nitrogen lxappearance scrot xclip pfetch
 
         # Command-line tools
         ripgrep ffmpeg tealdeer exa htop fzf
