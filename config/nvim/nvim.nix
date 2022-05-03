@@ -4,8 +4,8 @@
   enable = true;
   vimAlias = true;
   extraConfig = ''
-    luafile $HOME/.config/nixos/config/nvim/opts.lua
-    luafile $HOME/.config/nixos/config/nvim/treesitter.lua
+    luafile $HOME/.config/nixos/config/nvim/lua/opts.lua
+    luafile $HOME/.config/nixos/config/nvim/lua/treesitter.lua
     source $HOME/.config/nixos/config/nvim/nord.vim
   '';
 
