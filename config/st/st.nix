@@ -5,7 +5,7 @@
     (self: super: {
      st = super.st.overrideAttrs (oldAttrs: rec {
          patches = [
-
+          ./scrollback.diff
          ];
          });
      })
