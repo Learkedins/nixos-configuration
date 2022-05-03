@@ -8,6 +8,11 @@ if not luasnip_present then
   return
 end
 
+local check_backspace = function ()
+  local col = vim.fn.col "." -1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
+
 cmp.setup({
     snippet = {
       expand = function(args)
@@ -78,14 +83,14 @@ cmp.setup({
   })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
+--  cmp.setup.cmdline(':', {
+ --   mapping = cmp.mapping.preset.cmdline(),
+  --  sources = cmp.config.sources({
+   --   { name = 'path' }
+   -- }, {
+    --  { name = 'cmdline' }
+   -- })
+ -- })
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())

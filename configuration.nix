@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./config/dwm/dwm.nix
+      ./config/st/st.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

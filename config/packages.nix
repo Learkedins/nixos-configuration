@@ -18,6 +18,7 @@
         # WINDOW MANAGER ESSENTIALS
         dmenu
 
+        helix
 
         # GUI applications
         mpv brave firefox pqiv obsidian
