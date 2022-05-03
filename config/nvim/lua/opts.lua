@@ -10,8 +10,12 @@ set.relativenumber = true
 set.termguicolors = true
 set.guicursor = ""
 set.cursorline = true
+set.pumheight = 5
+set.hlsearch = false
+set.wrap = false
 
 set.expandtab = true
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
+
