@@ -1,5 +1,6 @@
 require'lspconfig'.rnix.setup{}
 require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.gopls.setup{}
 
 vim.diagnostic.config({
   virtual_text = false,

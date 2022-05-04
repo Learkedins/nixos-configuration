@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "VictorMono Nerd Font:pixelsize=15:antialias=true:autohint=true";
+static char *font = "Iosevka:pixelsize=15:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -198,8 +198,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-  { ShiftMask,               XK_K,           kscrollup,      {.i = -1} },
-  { ShiftMask,               XK_J,           kscrolldown,      {.i = -1} },
+  { ShiftMask,            XK_Page_Up,           kscrollup,      {.i = -1} },
+  { ShiftMask,            XK_Page_Down,           kscrolldown,      {.i = -1} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 };
 
