@@ -2,18 +2,18 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [       
       ./hardware-configuration.nix
       ./config/dwm/dwm.nix
       ./config/st/st.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixbox"; # Define your hostname.
-  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixbox"; 
+  networking.wireless.enable = false;
 
   time.timeZone = "Asia/Jakarta";
 
@@ -39,16 +39,14 @@
 
   # services.printing.enable = true;
 
-  # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # Touchpad Support
   services.xserver.libinput.enable = true;
 
   users.users.fs = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
   home-manager.users.fs = { pkgs, ... }: {
@@ -67,6 +65,13 @@
       '')
   ];
 
+  environment.variables = {
+    NIXOS_CONFIG = "$HOME/.config/nixos/configuration.nix";
+    NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    EDITOR="nvim";
+  };
+
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -74,17 +79,6 @@
     '';
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Open ports in the firewall.
